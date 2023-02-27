@@ -85,7 +85,7 @@ begin
 
     if (inputUser >= 50) and (inputUser < 100) then
     begin
-     if (inputUser = 99) or (inputUser = 90) then
+     if (inputUser <= 99) and (inputUser >= 90) then
       begin
         romanNumber := romanNumber + 'XC';
         inputUser := inputUser - 90;
@@ -148,7 +148,7 @@ begin
   begin
     if (inputUser[i] = 'i') or (inputUser[i] = 'I') then
     begin
-      if (i < Length(inputUser)) and ((inputUser[i + 1] = 'v') or (inputUser[i + 1] = 'x')) then
+      if (i < Length(inputUser)) and (((inputUser[i + 1] = 'v') or (inputUser[i + 1] = 'V')) or ((inputUser[i + 1] = 'x') or (inputUser[i + 1] = 'X'))) then
         sum := sum - 1
       else
         sum := sum + 1;
@@ -157,7 +157,7 @@ begin
       sum := sum + 5
     else if (inputUser[i] = 'x') or (inputUser[i] = 'X') then
     begin
-      if (i < Length(inputUser)) and ((inputUser[i + 1] = 'l') or (inputUser[i + 1] = 'c')) then
+      if (i < Length(inputUser)) and (((inputUser[i + 1] = 'l') or (inputUser[i + 1] = 'L')) or ((inputUser[i + 1] = 'c') or (inputUser[i + 1] = 'C'))) then
         sum := sum - 10
       else
         sum := sum + 10;
@@ -166,7 +166,7 @@ begin
       sum := sum + 50
     else if (inputUser[i] = 'c') or (inputUser[i] = 'C') then
     begin
-      if (i < Length(inputUser)) and ((inputUser[i + 1] = 'd') or (inputUser[i + 1] = 'm')) then
+      if (i < Length(inputUser)) and (((inputUser[i + 1] = 'd') or (inputUser[i + 1] = 'D')) or ((inputUser[i + 1] = 'm') or (inputUser[i+1] = 'M'))) then
         sum := sum - 100
       else
         sum := sum + 100;

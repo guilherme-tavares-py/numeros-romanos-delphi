@@ -85,9 +85,9 @@ begin
 
     if (inputUser >= 50) and (inputUser < 100) then
     begin
-     if (inputUser = 99) then
+     if (inputUser = 99) or (inputUser = 90) then
       begin
-        romanNumber := romanNumber + 'xc';
+        romanNumber := romanNumber + 'XC';
         inputUser := inputUser - 90;
       end
       else
@@ -228,20 +228,15 @@ begin
 
       inputArabic := StrToInt(inputArabicTest);
       if (inputArabic < 1) or (inputArabic > 1000) then
-      begin
         Writeln('O numero deve ser maior que 1 e menor que 1000')
-      end
       else
       begin
         romanNumeral := ToRomanNumber.Create(inputArabic);
-
         Writeln('',inputArabic,' para numeros romanos é ', romanNumeral.Convert);
       end;
     end
     else
-    begin
       Writeln('Voce deve inserir apenas numeros inteiros!');
-    end;
   end
 
   else if(escolha = 2) then
@@ -256,9 +251,7 @@ begin
       for j := 0 to 6 do
       begin
         if(inputRoman[i] = validRomanNumbers[j][1]) or (inputRoman[i] = validRomanNumbers[j][2]) then
-        begin
-            isRomanNumberValid := isRomanNumberValid + 1;
-        end
+          isRomanNumberValid := isRomanNumberValid + 1;
       end;
     end;
 
@@ -270,18 +263,11 @@ begin
 
 
     if (result = 0) then
-    begin
-      WriteLn('Insira um número romano valido!');
-    end
+      WriteLn('Insira um número romano valido!')
     else if(result < 1) or (result > 1000) then
-    begin
-      WriteLn('O número deve ser maior que 1 e menor que 1000');
-    end
+      WriteLn('O número deve ser maior que 1 e menor que 1000')
     else
-    begin
       WriteLn('',inputRoman,' para numeros arábicos é ',result);
-    end;
-
   end;
 
   Readln;
